@@ -3,8 +3,10 @@
 // Devanagari once and then shift code points into the target script's block.
 (function () {
   const VIRAMA = '्';
-  const OFFSET = { deva: 0, beng: 0x80, gujr: 0x180, taml: 0x280, telu: 0x300, knda: 0x380 };
-  const DRAVIDIAN = new Set(['taml', 'telu', 'knda']);
+  const OFFSET = { deva: 0, beng: 0x80, guru: 0x100, gujr: 0x180, orya: 0x200, taml: 0x280, telu: 0x300, knda: 0x380, mlym: 0x400 };
+  const DRAVIDIAN = new Set(['taml', 'telu', 'knda', 'mlym']);
+  // Scripts where a bare consonant is written with a visible virama (pulli / chandrakkala).
+  const EXPLICIT_A = new Set(['taml', 'mlym']);
 
   const VOWELS = {
     a: ['अ', ''], aa: ['आ', 'ा'], A: ['आ', 'ा'],
@@ -27,6 +29,9 @@
   };
   // Tamil-only letters: zh → ழ, R → ற, nn → ன (via their Devanagari twins).
   const TAMIL_CONS = { zh: 'ऴ', R: 'ऱ', nn: 'ऩ' };
+  const MALAYALAM_CONS = { zh: 'ऴ', R: 'ऱ' };
+  // Malayalam word-final consonants: chillu letters, and m → anusvara (ം).
+  const MALAYALAM_FINAL = { 'ण': 'ൺ', 'न': 'ൻ', 'र': 'ർ', 'ल': 'ൽ', 'ळ': 'ൾ', 'म': 'ं' };
 
   const SIGNS = { M: 'ं', H: 'ः', '~': 'ँ', '|': '।', '||': '॥' };
 
@@ -50,10 +55,17 @@
     const vowels = DRAVIDIAN.has(script) ? { ...VOWELS, ...DRAV_VOWELS } : { ...VOWELS };
     const cons = { ...CONS };
     if (script === 'taml') { Object.assign(cons, TAMIL_CONS); delete vowels.R; }
+    if (script === 'mlym') { Object.assign(cons, MALAYALAM_CONS); delete vowels.R; }
     const vk = tokens(vowels), ck = tokens(cons), sk = tokens(SIGNS);
-    const explicitA = script === 'taml'; // Tamil: bare consonant gets a pulli
+    const explicitA = EXPLICIT_A.has(script);
 
-    let out = '', pending = false, i = 0;
+    let out = '', pending = false, last = '', i = 0;
+    // A word ended on a bare consonant.
+    const endWord = () => {
+      if (!pending || !explicitA) return;
+      if (script === 'mlym' && MALAYALAM_FINAL[last]) out = out.slice(0, -last.length) + MALAYALAM_FINAL[last];
+      else out += VIRAMA;
+    };
     while (i < input.length) {
       const c = matchAt(input, i, cons, ck);
       const v = matchAt(input, i, vowels, vk);
@@ -61,7 +73,7 @@
       const best = [c, v, s].reduce((a, b) => (b && (!a || b.length > a.length) ? b : a), null);
       if (best && best === c) {
         if (pending) out += VIRAMA;
-        out += cons[c]; pending = true; i += c.length;
+        out += cons[c]; last = cons[c]; pending = true; i += c.length;
       } else if (best && best === v) {
         out += pending ? vowels[v][1] : vowels[v][0];
         pending = false; i += v.length;
@@ -73,11 +85,11 @@
         if (pending && explicitA && s !== 'M' && s !== 'H' && s !== '~') out += VIRAMA;
         out += SIGNS[s]; pending = false; i += s.length;
       } else {
-        if (pending && explicitA) out += VIRAMA;
+        endWord();
         out += input[i]; pending = false; i += 1;
       }
     }
-    if (pending && explicitA) out += VIRAMA;
+    endWord();
     return toScript(out, script);
   }
 
@@ -87,6 +99,18 @@
     if (script === 'taml') s = [...s].map((ch) => TAMIL_COLLAPSE[ch] || ch).join('');
     if (script === 'beng') s = s.replace(/व/g, 'ब').replace(/ळ/g, 'ल');
     if (script === 'knda') s = s.replace(/ँ/g, 'ं');
+    if (script === 'orya') {
+      // Odia has no common व; standalone य is written ୟ (य-phala keeps ଯ).
+      s = s.replace(/व/g, 'ब').replace(/(?<!्)य/g, 'य़');
+    }
+    if (script === 'guru') {
+      // Gurmukhi: no ऋ/ष; nasal before a consonant → tippi; doubled consonant → addak.
+      s = s.replace(/ऋ/g, 'रि').replace(/ृ/g, '्रि').replace(/ष/g, 'श')
+        .replace(/[नणङञ]्(?=[क-ह])/g, 'ੰ')
+        .replace(/([क-ह])्\1/g, 'ੱ$1')
+        // only ਰ ਵ ਹ take subjoined (pairin) forms; other clusters are written plainly
+        .replace(/्(?=[क-ह])(?![रवह])/g, '');
+    }
     const off = OFFSET[script];
     let res = '';
     for (const ch of s) {

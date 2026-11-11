@@ -1099,7 +1099,7 @@
         props.append(el('label', { class: 'toggle' }, [cb, el('span', { text: t('phonetic') })]));
         if (state.phonetic && PHONETIC_EXAMPLES[sc]) {
           const ex = PHONETIC_EXAMPLES[sc];
-          props.append(el('div', { class: 'hint', html: `<code>${ex}</code> → <b>${transliterate(ex, sc)}</b><br><code>aa ee oo</code> · <code>T D N Sh</code>${sc !== 'arab' ? ` · <code>^</code> = ${transliterate('k^', sc)}` : ''}${['taml', 'telu', 'knda'].includes(sc) ? ' · <code>e/E o/O</code>' : ''}${sc === 'taml' ? ' · <code>zh R</code>' : ''}` }));
+          props.append(el('div', { class: 'hint', html: `<code>${ex}</code> → <b>${transliterate(ex, sc)}</b><br><code>aa ee oo</code> · <code>T D N Sh</code>${sc !== 'arab' ? ` · <code>^</code> = ${transliterate('k^', sc)}` : ''}${['taml', 'telu', 'knda', 'mlym'].includes(sc) ? ' · <code>e/E o/O</code>' : ''}${['taml', 'mlym'].includes(sc) ? ' · <code>zh R</code>' : ''}` }));
         }
       }
     }

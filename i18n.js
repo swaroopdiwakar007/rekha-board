@@ -1,5 +1,5 @@
-// UI translations for the 8 most-spoken Indian languages (Census 2011) + English.
-// Order: Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Urdu, Kannada.
+// UI translations for the 11 most-spoken Indian languages (Census 2011) + English.
+// Order: Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Urdu, Kannada, Odia, Malayalam, Punjabi.
 
 window.SCRIPTS = {
   latn: { name: 'Latin',      glyph: 'Aa', font: 'Kalam',            lh: 1.4,  rtl: false },
@@ -10,12 +10,16 @@ window.SCRIPTS = {
   gujr: { name: 'ગુજરાતી',     glyph: 'અ',  font: 'Baloo Bhai 2',     lh: 1.45, rtl: false },
   arab: { name: 'اردو',        glyph: 'ا',  font: 'Gulzar',           lh: 1.95, rtl: true  },
   knda: { name: 'ಕನ್ನಡ',       glyph: 'ಅ',  font: 'Baloo Tamma 2',    lh: 1.5,  rtl: false },
+  orya: { name: 'ଓଡ଼ିଆ',        glyph: 'ଅ',  font: 'Baloo Bhaina 2',   lh: 1.5,  rtl: false },
+  mlym: { name: 'മലയാളം',     glyph: 'അ',  font: 'Baloo Chettan 2',  lh: 1.5,  rtl: false },
+  guru: { name: 'ਗੁਰਮੁਖੀ',      glyph: 'ਅ',  font: 'Baloo Paaji 2',    lh: 1.5,  rtl: false },
 };
 
 // Example word shown in the phonetic-typing hint, per script.
 window.PHONETIC_EXAMPLES = {
   deva: 'namaste', beng: 'namaskaar', telu: 'telugu', taml: 'vaNakkam',
   gujr: 'gujaraatee', arab: 'salaam', knda: 'kannaDa',
+  orya: 'namaskaar', mlym: 'malayaaLam', guru: 'panjaabee',
 };
 
 window.LANGS = {
@@ -27,6 +31,9 @@ window.LANGS = {
   gu: { native: 'ગુજરાતી', script: 'gujr', ui: 'Baloo Bhai 2', rtl: false },
   ur: { native: 'اردو', script: 'arab', ui: 'Noto Naskh Arabic', rtl: true },
   kn: { native: 'ಕನ್ನಡ', script: 'knda', ui: 'Baloo Tamma 2', rtl: false },
+  or: { native: 'ଓଡ଼ିଆ', script: 'orya', ui: 'Baloo Bhaina 2', rtl: false },
+  ml: { native: 'മലയാളം', script: 'mlym', ui: 'Baloo Chettan 2', rtl: false },
+  pa: { native: 'ਪੰਜਾਬੀ', script: 'guru', ui: 'Baloo Paaji 2', rtl: false },
   en: { native: 'English', script: 'latn', ui: 'Baloo 2', rtl: false },
 };
 
@@ -174,5 +181,53 @@ window.STRINGS = {
     welcomeSub: 'ಒಂದು ಉಪಕರಣವನ್ನು ಆರಿಸಿ ಚಿತ್ರಿಸಲು ಪ್ರಾರಂಭಿಸಿ. ಬರೆಯಲು ಎಲ್ಲಿಯಾದರೂ ಡಬಲ್-ಕ್ಲಿಕ್ ಮಾಡಿ.',
     theme: 'ಡಾರ್ಕ್ ಮೋಡ್', layers: 'ಪದರಗಳು', actions: 'ಕ್ರಿಯೆಗಳು', zoomIn: 'ಝೂಮ್ ಇನ್', zoomOut: 'ಝೂಮ್ ಔಟ್',
     resetZoom: 'ಝೂಮ್ ಮರುಹೊಂದಿಸಿ', sample: 'ನಮಸ್ಕಾರ ಜಗತ್ತು',
+  },
+  or: {
+    appName: 'ରେଖା', select: 'ଚୟନ', hand: 'ହାତ (ଘୁଞ୍ଚାନ୍ତୁ)', rect: 'ଆୟତକ୍ଷେତ୍ର', diamond: 'ହୀରା',
+    ellipse: 'ଉପବୃତ୍ତ', arrow: 'ତୀର', line: 'ରେଖା', draw: 'ପେନ୍ସିଲ', text: 'ଲେଖା', eraser: 'ରବର',
+    lock: 'ଉପକରଣ ସକ୍ରିୟ ରଖନ୍ତୁ', stroke: 'ରେଖାର ରଙ୍ଗ', background: 'ପୃଷ୍ଠଭୂମି', fill: 'ଭରଣ', hachure: 'ତେରଛା ରେଖା',
+    cross: 'ଜାଲି', solid: 'ଘନ', strokeWidth: 'ରେଖାର ମୋଟେଇ', thin: 'ପତଳା', bold: 'ମୋଟା',
+    extraBold: 'ବହୁତ ମୋଟା', sloppiness: 'ଅସଜଡ଼ା', architect: 'ସ୍ଥପତି', artist: 'କଳାକାର',
+    cartoonist: 'କାର୍ଟୁନିଷ୍ଟ', opacity: 'ଅସ୍ୱଚ୍ଛତା', fontSize: 'ଅକ୍ଷରର ଆକାର', small: 'ଛୋଟ', medium: 'ମଧ୍ୟମ',
+    large: 'ବଡ଼', huge: 'ବହୁତ ବଡ଼', script: 'ଲିପି', phonetic: 'ଧ୍ୱନିଭିତ୍ତିକ ଟାଇପିଂ (ରୋମାନ → ଲିପି)',
+    undo: 'ପୂର୍ବାବସ୍ଥାକୁ ଫେରନ୍ତୁ', redo: 'ପୁଣି କରନ୍ତୁ', delete: 'ବିଲୋପ କରନ୍ତୁ', duplicate: 'ନକଲ କରନ୍ତୁ', front: 'ସବୁଠୁ ଆଗକୁ ଆଣନ୍ତୁ',
+    back: 'ସବୁଠୁ ପଛକୁ ପଠାନ୍ତୁ', clear: 'କ୍ୟାନଭାସ ସଫା କରନ୍ତୁ', clearConfirm: 'ପୂରା କ୍ୟାନଭାସ ସଫା କରିବେ କି?',
+    exportPng: 'PNG ରପ୍ତାନି', exportSvg: 'SVG ରପ୍ତାନି', save: 'ଫାଇଲରେ ସଞ୍ଚୟ କରନ୍ତୁ', open: 'ଫାଇଲ ଖୋଲନ୍ତୁ',
+    lang: 'ଭାଷା', welcome: 'ଆପଣଙ୍କ ଚିନ୍ତାଧାରା ଆଙ୍କନ୍ତୁ!',
+    welcomeSub: 'ଏକ ଉପକରଣ ବାଛି ଆଙ୍କିବା ଆରମ୍ଭ କରନ୍ତୁ। ଲେଖିବା ପାଇଁ ଯେକୌଣସି ସ୍ଥାନରେ ଡବଲ-କ୍ଲିକ କରନ୍ତୁ।',
+    theme: 'ଡାର୍କ ମୋଡ', layers: 'ସ୍ତର', actions: 'କାର୍ଯ୍ୟ', zoomIn: 'ଜୁମ ଇନ', zoomOut: 'ଜୁମ ଆଉଟ',
+    resetZoom: 'ଜୁମ ରିସେଟ', sample: 'ନମସ୍କାର ଦୁନିଆ',
+  },
+  ml: {
+    appName: 'രേഖ', select: 'തിരഞ്ഞെടുക്കുക', hand: 'കൈ (നീക്കുക)', rect: 'ദീർഘചതുരം', diamond: 'വജ്രം',
+    ellipse: 'ദീർഘവൃത്തം', arrow: 'അമ്പ്', line: 'വര', draw: 'പെൻസിൽ', text: 'എഴുത്ത്', eraser: 'മായ്ക്കൽ',
+    lock: 'ഉപകരണം സജീവമാക്കി വയ്ക്കുക', stroke: 'വരയുടെ നിറം', background: 'പശ്ചാത്തലം', fill: 'നിറയ്ക്കൽ', hachure: 'ചരിഞ്ഞ വരകൾ',
+    cross: 'വല', solid: 'കട്ടി', strokeWidth: 'വരയുടെ കനം', thin: 'നേർത്ത', bold: 'കനത്ത',
+    extraBold: 'വളരെ കനത്ത', sloppiness: 'അലസത', architect: 'വാസ്തുശില്പി', artist: 'കലാകാരൻ',
+    cartoonist: 'കാർട്ടൂണിസ്റ്റ്', opacity: 'അതാര്യത', fontSize: 'അക്ഷര വലുപ്പം', small: 'ചെറുത്', medium: 'ഇടത്തരം',
+    large: 'വലുത്', huge: 'വളരെ വലുത്', script: 'ലിപി', phonetic: 'സ്വനിക ടൈപ്പിങ് (റോമൻ → ലിപി)',
+    undo: 'പഴയപടിയാക്കുക', redo: 'വീണ്ടും ചെയ്യുക', delete: 'ഇല്ലാതാക്കുക', duplicate: 'പകർപ്പെടുക്കുക', front: 'ഏറ്റവും മുന്നിലേക്ക്',
+    back: 'ഏറ്റവും പിന്നിലേക്ക്', clear: 'ക്യാൻവാസ് മായ്ക്കുക', clearConfirm: 'മുഴുവൻ ക്യാൻവാസും മായ്ക്കണോ?',
+    exportPng: 'PNG എക്സ്പോർട്ട്', exportSvg: 'SVG എക്സ്പോർട്ട്', save: 'ഫയലിൽ സംരക്ഷിക്കുക', open: 'ഫയൽ തുറക്കുക',
+    lang: 'ഭാഷ', welcome: 'നിങ്ങളുടെ ആശയങ്ങൾ വരയ്ക്കൂ!',
+    welcomeSub: 'ഒരു ഉപകരണം തിരഞ്ഞെടുത്ത് വരയ്ക്കാൻ തുടങ്ങൂ. എഴുതാൻ എവിടെയും ഡബിൾ-ക്ലിക്ക് ചെയ്യൂ.',
+    theme: 'ഡാർക്ക് മോഡ്', layers: 'പാളികൾ', actions: 'പ്രവർത്തനങ്ങൾ', zoomIn: 'സൂം ഇൻ', zoomOut: 'സൂം ഔട്ട്',
+    resetZoom: 'സൂം പുനഃസജ്ജമാക്കുക', sample: 'നമസ്കാരം ലോകമേ',
+  },
+  pa: {
+    appName: 'ਰੇਖਾ', select: 'ਚੋਣ', hand: 'ਹੱਥ (ਖਿਸਕਾਓ)', rect: 'ਆਇਤ', diamond: 'ਹੀਰਾ',
+    ellipse: 'ਅੰਡਾਕਾਰ', arrow: 'ਤੀਰ', line: 'ਲਕੀਰ', draw: 'ਪੈਨਸਿਲ', text: 'ਲਿਖਤ', eraser: 'ਰਬੜ',
+    lock: 'ਟੂਲ ਚਾਲੂ ਰੱਖੋ', stroke: 'ਲਕੀਰ ਦਾ ਰੰਗ', background: 'ਪਿਛੋਕੜ', fill: 'ਭਰਾਈ', hachure: 'ਤਿਰਛੀਆਂ ਲਕੀਰਾਂ',
+    cross: 'ਜਾਲੀ', solid: 'ਠੋਸ', strokeWidth: 'ਲਕੀਰ ਦੀ ਮੋਟਾਈ', thin: 'ਪਤਲੀ', bold: 'ਮੋਟੀ',
+    extraBold: 'ਬਹੁਤ ਮੋਟੀ', sloppiness: 'ਬੇਤਰਤੀਬੀ', architect: 'ਆਰਕੀਟੈਕਟ', artist: 'ਕਲਾਕਾਰ',
+    cartoonist: 'ਕਾਰਟੂਨਿਸਟ', opacity: 'ਅਪਾਰਦਰਸ਼ਤਾ', fontSize: 'ਅੱਖਰ ਦਾ ਆਕਾਰ', small: 'ਛੋਟਾ', medium: 'ਦਰਮਿਆਨਾ',
+    large: 'ਵੱਡਾ', huge: 'ਬਹੁਤ ਵੱਡਾ', script: 'ਲਿਪੀ', phonetic: 'ਧੁਨੀ ਅਧਾਰਿਤ ਟਾਈਪਿੰਗ (ਰੋਮਨ → ਲਿਪੀ)',
+    undo: 'ਵਾਪਸ ਕਰੋ', redo: 'ਦੁਬਾਰਾ ਕਰੋ', delete: 'ਮਿਟਾਓ', duplicate: 'ਨਕਲ ਬਣਾਓ', front: 'ਸਭ ਤੋਂ ਅੱਗੇ ਲਿਆਓ',
+    back: 'ਸਭ ਤੋਂ ਪਿੱਛੇ ਭੇਜੋ', clear: 'ਕੈਨਵਸ ਸਾਫ਼ ਕਰੋ', clearConfirm: 'ਕੀ ਤੁਸੀਂ ਪੂਰਾ ਕੈਨਵਸ ਸਾਫ਼ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?',
+    exportPng: 'PNG ਨਿਰਯਾਤ ਕਰੋ', exportSvg: 'SVG ਨਿਰਯਾਤ ਕਰੋ', save: 'ਫ਼ਾਈਲ ਵਿੱਚ ਸੰਭਾਲੋ', open: 'ਫ਼ਾਈਲ ਖੋਲ੍ਹੋ',
+    lang: 'ਭਾਸ਼ਾ', welcome: 'ਆਪਣੇ ਵਿਚਾਰਾਂ ਨੂੰ ਚਿੱਤਰੋ!',
+    welcomeSub: 'ਕੋਈ ਟੂਲ ਚੁਣੋ ਅਤੇ ਡਰਾਇੰਗ ਸ਼ੁਰੂ ਕਰੋ। ਲਿਖਣ ਲਈ ਕਿਤੇ ਵੀ ਡਬਲ-ਕਲਿੱਕ ਕਰੋ।',
+    theme: 'ਡਾਰਕ ਮੋਡ', layers: 'ਪਰਤਾਂ', actions: 'ਕਾਰਵਾਈਆਂ', zoomIn: 'ਜ਼ੂਮ ਇਨ', zoomOut: 'ਜ਼ੂਮ ਆਊਟ',
+    resetZoom: 'ਜ਼ੂਮ ਰੀਸੈੱਟ', sample: 'ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਦੁਨੀਆ',
   },
 };

@@ -4,14 +4,14 @@
 
 **A hand-drawn whiteboard that speaks India's languages.**
 
-Sketch diagrams, flowcharts and notes in Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Urdu and Kannada,
+Sketch diagrams, flowcharts and notes in Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Urdu, Kannada, Odia, Malayalam and Punjabi,
 with a fully translated interface and Roman-to-script typing built in.
 
-हिन्दी · বাংলা · मराठी · తెలుగు · தமிழ் · ગુજરાતી · اردو · ಕನ್ನಡ · English
+हिन्दी · বাংলা · मराठी · తెలుగు · தமிழ் · ગુજરાતી · اردو · ಕನ್ನಡ · ଓଡ଼ିଆ · മലയാളം · ਪੰਜਾਬੀ · English
 
 ### [▶ Try it live](https://swaroopdiwakar007.github.io/rekha-board/)
 
-![Rekha Board with a Hindi flowchart and greetings in all eight scripts](docs/hero.png)
+![Rekha Board with a Hindi flowchart and greetings in all eleven languages](docs/hero.png)
 
 </div>
 
@@ -27,7 +27,7 @@ Most whiteboard tools treat Indian scripts as an afterthought: the menus are Eng
 - **Every script gets its own handwriting-style font,** so your text sits naturally next to the sketchy shapes.
 - **You can type phonetically on any keyboard.** Write `namaste` and get नमस्ते, with no input method to install.
 
-The eight languages are India's most widely spoken (Census 2011), spoken by over 80% of Indians.
+The eleven languages are India's most widely spoken (Census 2011), spoken by over 90% of Indians.
 
 ---
 
@@ -41,7 +41,7 @@ Rectangles, diamonds, ellipses, arrows, lines and a freehand pen, all rendered w
 
 Turn on **phonetic typing** in the style card and type in Roman letters. Each word is converted as you type, and Backspace removes one Roman letter at a time.
 
-![Typing namaste duniyaa, vaNakkam ulagam, kannaDa kalike and salaam duniyaa, each converting into native script](docs/phonetic.gif)
+![Typing Hindi, Tamil, Malayalam, Punjabi, Kannada and Urdu phrases in Roman letters, each converting into native script](docs/phonetic.gif)
 
 | Script | You type | You get |
 | --- | --- | --- |
@@ -52,6 +52,9 @@ Turn on **phonetic typing** in the style card and type in Roman letters. Each wo
 | Gujarati | `gujaraatee` | ગુજરાતી |
 | Urdu | `salaam` · `kyaa` | سلام · کیا |
 | Kannada | `kannaDa` · `bas^` | ಕನ್ನಡ · ಬಸ್ |
+| Odia | `namaskaar` · `priya` | ନମସ୍କାର · ପ୍ରିୟ |
+| Malayalam | `malayaaLam` · `avan` | മലയാളം · അവൻ |
+| Punjabi (Gurmukhi) | `panjaabee` · `pakkaa` | ਪੰਜਾਬੀ · ਪੱਕਾ |
 
 Prefer your own keyboard or IME? Untick phonetic typing and type normally. Pasted text is never converted.
 
@@ -69,18 +72,20 @@ Prefer your own keyboard or IME? Untick phonetic typing and type normally. Paste
 | Halant (kill the vowel) | `^` | `p^` → ಪ್ |
 | Conjuncts | just type consonants together | `stree` → स्त्री |
 | Danda | `\|` · `\|\|` | । · ॥ |
-| Tamil, Telugu, Kannada | `e`/`o` short, `E`/`O` long | `telugu` → తెలుగు |
-| Tamil only | `zh` (ழ) · `R` (ற) · `nn` (ன) | `thamizh` → தமிழ் |
+| Tamil, Telugu, Kannada, Malayalam | `e`/`o` short, `E`/`O` long | `telugu` → తెలుగు |
+| Tamil and Malayalam | `zh` (ழ / ഴ) · `R` (ற / റ); Tamil also `nn` (ன) | `thamizh` → தமிழ் |
+| Malayalam word endings | final `n` `N` `l` `L` `r` become chillu letters, final `m` becomes ം | `avan` → അവൻ |
+| Punjabi | doubled consonants get an addak, `n` before a consonant gets a tippi | `pakkaa` → ਪੱਕਾ |
 | Urdu | `kh` (خ) · `Kh` (کھ) · `N` (ں) · `R` (ڑ) | `?` → ؟ |
 
 Letters are case-sensitive: `t` is त but `T` is ट.
 </details>
 
-## 🌐 Nine languages, one click
+## 🌐 Twelve languages, one click
 
-The **script ribbon** at the bottom switches the entire interface. Each language's button is written in its own script, and the app name changes with it: रेखा, রেখা, రేఖ, கோடு, રેખા, ریکھا, ರೇಖೆ.
+The **script ribbon** at the bottom switches the entire interface. Each language's button is written in its own script, and the app name changes with it: रेखा, রেখা, రేఖ, கோடு, રેખા, ریکھا, ರೇಖೆ, ରେଖା, രേഖ, ਰੇਖਾ.
 
-![Cycling through all nine interface languages](docs/languages.gif)
+![Cycling through all twelve interface languages](docs/languages.gif)
 
 ### Right-to-left for Urdu
 
@@ -107,7 +112,7 @@ Choosing اردو mirrors the whole layout: the tool rail, style card and menus 
 
 - **Shapes:** rectangle, diamond, ellipse, arrow, line, freehand pen, eraser
 - **Style:** six ink colours plus a custom picker, six fill colours, hatch / cross-hatch / solid fills, three stroke widths, three roughness levels, opacity
-- **Text:** four sizes, a choice of eight scripts per text box, multi-line, and auto-sizing
+- **Text:** four sizes, a choice of eleven scripts per text box, multi-line, and auto-sizing
 - **Editing:** select, marquee-select, move, resize from the corners (Shift keeps proportions), duplicate, Alt-drag to copy, bring to front / send to back, copy / cut / paste, arrow-key nudge
 - **Canvas:** infinite pan and zoom (10%–3000%), dot grid, undo / redo
 - **Files:** export **PNG** (2× resolution) or **SVG** (fonts linked), save and reopen `.rekha.json` drawings, automatic saving in your browser
@@ -148,9 +153,9 @@ Open **http://localhost:5180**. Any static file server works (`npx serve`, VS Co
 | [`i18n.js`](i18n.js) | Translated UI strings, plus the table of scripts, fonts and line heights |
 | [`translit.js`](translit.js) | Roman-to-Indic transliteration |
 
-**The transliteration trick:** Unicode lays out the Brahmic scripts in parallel blocks, so क (U+0915), ক (U+0995), ક (U+0A95), க (U+0B95), క (U+0C15) and ಕ (U+0C95) sit at the same offset in their blocks. `translit.js` converts Roman input to Devanagari once and then shifts each code point into the target script's block. It then patches each script's gaps: Tamil merges aspirated and voiced consonants and uses an explicit pulli, Bengali has no separate व, and Dravidian scripts distinguish short and long e and o. Urdu is an abjad, so it has its own position-aware mapping in which short vowels drop out mid-word.
+**The transliteration trick:** Unicode lays out the Brahmic scripts in parallel blocks, so क (U+0915), ক (U+0995), ਕ (U+0A15), ક (U+0A95), କ (U+0B15), க (U+0B95), క (U+0C15), ಕ (U+0C95) and ക (U+0D15) sit at the same offset in their blocks. `translit.js` converts Roman input to Devanagari once and then shifts each code point into the target script's block. It then patches each script's gaps: Tamil merges aspirated and voiced consonants and uses an explicit pulli, Bengali has no separate व, Dravidian scripts distinguish short and long e and o, Malayalam ends words with chillu letters, Gurmukhi uses tippi and addak instead of most conjuncts, and Odia writes standalone य as ୟ. Urdu is an abjad, so it has its own position-aware mapping in which short vowels drop out mid-word.
 
-**Fonts:** [Kalam](https://fonts.google.com/specimen/Kalam) (Latin and Devanagari), the [Baloo 2](https://fonts.google.com/specimen/Baloo+2) family (Bengali, Telugu, Tamil, Gujarati, Kannada) and [Gulzar](https://fonts.google.com/specimen/Gulzar) (Urdu), all from Google Fonts.
+**Fonts:** [Kalam](https://fonts.google.com/specimen/Kalam) (Latin and Devanagari), the [Baloo 2](https://fonts.google.com/specimen/Baloo+2) family (Bengali, Telugu, Tamil, Gujarati, Kannada, Odia, Malayalam, Gurmukhi) and [Gulzar](https://fonts.google.com/specimen/Gulzar) (Urdu), all from Google Fonts.
 
 ## Credits
 

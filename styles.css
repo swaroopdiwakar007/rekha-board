@@ -162,7 +162,7 @@ body.dark #canvas, body.dark #editor { filter: invert(92%) hue-rotate(180deg); }
 }
 .ribbon::-webkit-scrollbar { display: none; }
 .chip {
-  flex: none; height: 40px; padding: 4px 14px 0; border: 0; border-radius: 20px;
+  flex: none; height: 40px; padding: 4px 12px 0; border: 0; border-radius: 20px;
   background: transparent; cursor: pointer; font-size: 16px; line-height: 1; white-space: nowrap; color: var(--muted);
   transition: background .12s, color .12s;
 }
@@ -182,10 +182,14 @@ body.dark #canvas, body.dark #editor { filter: invert(92%) hue-rotate(180deg); }
 .welcome h1 { margin: 2px 0 4px; font-size: 22px; font-weight: 600; color: var(--text); }
 .welcome p { margin: 0 auto; max-width: 420px; font-size: 15px; }
 .welcome-greetings {
-  margin: 26px auto 0; display: grid; grid-template-columns: repeat(4, auto); gap: 8px 22px;
+  margin: 26px auto 0; display: flex; flex-wrap: wrap; gap: 8px 22px; max-width: 640px;
   justify-content: center; font-size: 17px; color: var(--ink); opacity: .55;
 }
+.welcome-greetings span { white-space: nowrap; }
 
+@media (max-width: 1000px) {
+  .chip { padding-inline: 8px; font-size: 15px; }
+}
 @media (max-width: 720px) {
   .rail { top: auto; bottom: 74px; transform: none; inset-inline-start: 50%; translate: -50% 0; flex-direction: row; overflow-x: auto; max-width: calc(100vw - 28px); scrollbar-width: none; }
   [dir=rtl] .rail { translate: 50% 0; }
@@ -196,7 +200,7 @@ body.dark #canvas, body.dark #editor { filter: invert(92%) hue-rotate(180deg); }
   .props { top: 72px; width: 196px; max-height: calc(100vh - 220px); }
   .welcome { padding: 0 20px 140px; }
   .welcome-mark { font-size: 60px; }
-  .welcome-greetings { grid-template-columns: repeat(2, auto); }
+  .welcome-greetings { gap: 6px 16px; font-size: 15px; }
 }
 
 /* ---------- duotone icons ---------- */
