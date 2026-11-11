@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Rekha Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Baloo+2:wght@400;600;700&family=Baloo+Da+2:wght@400;600&family=Baloo+Tammudu+2:wght@400;600&family=Baloo+Thambi+2:wght@400;600&family=Baloo+Bhai+2:wght@400;600&family=Baloo+Tamma+2:wght@400;600&family=Gulzar&family=Noto+Naskh+Arabic:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.js"></script>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <textarea id="editor" spellcheck="false" autocomplete="off" hidden></textarea>
+
+  <div id="welcome" class="welcome">
+    <div class="welcome-mark" id="welcomeLogo"></div>
+    <h1 id="welcomeTitle"></h1>
+    <p id="welcomeSub"></p>
+    <div class="welcome-greetings" id="welcomeSamples"></div>
+  </div>
+
+  <!-- brand + menu -->
+  <header class="brand">
+    <button class="icon-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false"></button>
+    <span class="brand-mark" id="brandMark"></span>
+    <div class="menu" id="menu" hidden></div>
+  </header>
+
+  <!-- history + zoom -->
+  <div class="corner">
+    <button class="icon-btn" id="undoBtn"></button>
+    <button class="icon-btn" id="redoBtn"></button>
+    <span class="divider"></span>
+    <button class="icon-btn" id="zoomOut"></button>
+    <button class="zoom-label" id="zoomReset">100%</button>
+    <button class="icon-btn" id="zoomIn"></button>
+  </div>
+
+  <!-- tool rail -->
+  <nav class="rail" id="toolbar" role="toolbar"></nav>
+
+  <!-- style card -->
+  <aside class="card props" id="props" hidden></aside>
+
+  <!-- script ribbon -->
+  <div class="ribbon" id="ribbon" role="radiogroup"></div>
+
+  <input type="file" id="fileInput" accept=".json,.rekha,application/json" hidden />
+
+  <script src="i18n.js"></script>
+  <script src="translit.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
