@@ -65,6 +65,10 @@
       } else if (best && best === v) {
         out += pending ? vowels[v][1] : vowels[v][0];
         pending = false; i += v.length;
+      } else if (input[i] === '^') {
+        // explicit halant: kills the inherent vowel (p^ → प्)
+        if (pending) out += VIRAMA;
+        pending = false; i += 1;
       } else if (best && best === s) {
         if (pending && explicitA && s !== 'M' && s !== 'H' && s !== '~') out += VIRAMA;
         out += SIGNS[s]; pending = false; i += s.length;
@@ -109,7 +113,7 @@
     e:  ['ای', 'ی',  'ے'], ai: ['اے', 'ی', 'ے'],
     o:  ['او', 'و',  'و'], au: ['او', 'و', 'و'], ou: ['او', 'و', 'و'],
   };
-  const UR_PUNCT = { '?': '؟', ',': '،' };
+  const UR_PUNCT = { '?': '؟', ',': '،', '^': '' };
 
   function urdu(input) {
     const ck = tokens(UR_CONS), vk = tokens(UR_VOW);
@@ -129,7 +133,7 @@
         const atStart = !prev || prev[0] === 'o';
         const atEnd = !next || next[0] === 'o';
         out += UR_VOW[val][atStart ? 0 : atEnd ? 2 : 1];
-      } else out += UR_PUNCT[val] || val;
+      } else out += val in UR_PUNCT ? UR_PUNCT[val] : val;
     });
     return out;
   }
@@ -140,5 +144,5 @@
     if (script in OFFSET) return brahmic(input, script);
     return input;
   };
-  window.PHONETIC_KEY = /^[A-Za-z~|]$/;
+  window.PHONETIC_KEY = /^[A-Za-z~|^]$/;
 })();
