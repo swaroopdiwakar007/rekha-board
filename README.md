@@ -9,6 +9,8 @@ with a fully translated interface and Roman-to-script typing built in.
 
 हिन्दी · বাংলা · मराठी · తెలుగు · தமிழ் · ગુજરાતી · اردو · ಕನ್ನಡ · English
 
+### [▶ Try it live](https://swaroopdiwakar007.github.io/rekha-board/)
+
 ![Rekha Board with a Hindi flowchart and greetings in all eight scripts](docs/hero.png)
 
 </div>
