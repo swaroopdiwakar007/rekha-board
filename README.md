@@ -161,3 +161,7 @@ Open **http://localhost:5180**. Any static file server works (`npx serve`, VS Co
 
 - [rough.js](https://roughjs.com) by Preet Shihn, for the hand-drawn rendering
 - Fonts by their designers via Google Fonts: Kalam (Indian Type Foundry), Baloo (Ek Type), Gulzar (Borna Izadpanah, Fiona Ross, Simon Cozens)
+
+## License
+
+Released under the [MIT License](LICENSE). You can use, copy, change and share it freely, including in commercial projects, as long as you keep the copyright and license notice.
